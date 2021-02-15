@@ -1,18 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8"/>
         <title>Dynamic HTML page 1 </title>
-        
+        <style>
+        body {background-color: white;}
+        #title {font-family: cursive,sans-serif;
+            color:rgb(16, 16, 17);
+            text-align:center;
+            }
+        #the_text {border: solid 2pt;
+         border-color: rgb(255, 255, 255);
+         width: 500px;
+         color:rgb(17, 16, 16)}
+        </style>
+        </style>
+        <br>
+        <br>
+        <div id ="title" title="Dynamic HTML page">Dynamic HTML page </div>
+        <br>
+       
+        <script>
+          var word = document.getElementById('text');
+          function paragraph() {
+            document.getElementById('the_text').textContent = text.value;
+            text.value=''
+
+      }
+      
+        </script>        
     </head>
 
     <body>
-        <p>
-        
-
-        </p>
-
-        <script>
-           
-        </script>
     </body>
+
+    <input id="text" placeholder="Write some text">
+    <button id="make_paragrph" onclick="paragraph()">Make paragraph</button>
+    <p type="text" id="the_text"></p>
+    <script>text.value=''</script>
+    
+
 </html>

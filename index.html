@@ -6,38 +6,88 @@
         <style>
         body {background-color: white;}
         #title {font-family: cursive,sans-serif;
-            color:rgb(16, 16, 17);
-            text-align:center;
+            color:rgb(11, 15, 14);
+            font-size:25px;
             }
         #the_text {border: solid 2pt;
          border-color: rgb(255, 255, 255);
          width: 500px;
          color:rgb(17, 16, 16)}
+        #select_color{font-family: cursive,sans-serif;
+            color:rgb(8, 8, 8);
+            font-size:14px;
+        }
+        #Red{font-family: cursive,sans-serif;
+            color:rgb(224, 24, 24);
+            font-size:14px;
+        }
+        #Blue {font-family: cursive,sans-serif;
+            color:rgb(36, 38, 179);
+            font-size:14px;
+
+        }
+        #Remove {font-family: cursive,sans-serif;
+            color:rgb(16, 17, 19);
+            font-size:14px;
+
+        }
+
         </style>
         </style>
         <br>
         <br>
         <div id ="title" title="Dynamic HTML page">Dynamic HTML page </div>
         <br>
-       
-        <script>
-          var word = document.getElementById('text');
+        <br>
+         <script>
+        
           function paragraph() {
-            document.getElementById('the_text').textContent = text.value;
+            var p = document.createElement("p");
+            p.innerHTML = document.getElementById('text').value;;
+            var space= document.getElementById("the_text");
+            space.appendChild(p);
             text.value=''
 
       }
       
+          function red_color() {
+            paras=document.getElementsByTagName('p')
+            for (let i = 1; i < paras.length; i++) {
+                    paras[i].style ='color:red' 
+}   
+      }
+
+      function blue_color() {
+            paras=document.getElementsByTagName('p')
+            for (let i = 1; i < paras.length; i++) {
+                    paras[i].style ='color:blue' 
+}   
+      }
+
+      function remove_paragraphs(){
+        paras=document.getElementsByTagName('p')
+            for (let i = 1; i < paras.length; i++) {
+                    paras[i].innerHTML = "";
+}   
+      }
+      
+
         </script>        
+
+
     </head>
-
     <body>
-    </body>
-
     <input id="text" placeholder="Write some text">
-    <button id="make_paragrph" onclick="paragraph()">Make paragraph</button>
-    <p type="text" id="the_text"></p>
-    <script>text.value=''</script>
+    <button id="make_paragrph" onclick="paragraph()">Make new paragraph</button>
+    <div style="white-space: pre"></div>
+    <p id="select_color">Select the paragraphs colors:</p>
+    <button id="Red" onclick="red_color()">Red</button>
+    <button id="Blue" onclick="blue_color()">Blue</button>
+    <button id="Remove" onclick="remove_paragraphs()">Remove all paragraphs</button>
     
+    <p type="text" id="the_text">
+    </p>
 
+
+    
 </html>

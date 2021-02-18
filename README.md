@@ -1,1 +1,1 @@
-# dynamic_HTML_page_1
+#Repository to write text in different parragraphs and change its colors.
